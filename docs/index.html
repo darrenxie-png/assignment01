@@ -21,32 +21,34 @@
   <link rel="apple-touch-icon" href="./assets/icon-192-DMe2ECAM.png">
 
   <title>WebGIS Story</title>
-  <script type="module" crossorigin src="./assets/index-DTJXWpE4.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DArAl06g.css">
+  <script type="module" crossorigin src="./assets/index-DV4phm_e.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CdiTpq4E.css">
 </head>
 
 <body>
   <div id="app">
     <!-- 🔥 Pindahkan nav ke sini -->
-    <nav id="navbar" class="nav-buttons"></nav>
+     <header>
+      <h1>WebGIS Story</h1>
+      <nav id="navbar" class="nav-buttons"></nav>
+    </header>
+    
 
     <main id="mainContent"></main>
+    <footer>
+      <p>&copy; 2024 WebGIS Story. All rights reserved.</p>
+    </footer>
   </div>
 
 
   <script>
-    // Register Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered:', registration);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      });
-    }
-  </script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.log('SW registration failed:', err));
+    });
+  }
+</script>
 </body>
 </html>

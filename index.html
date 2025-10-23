@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#2f3640">
 
   <!-- PWA Manifest -->
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="./style.css">
 
   <!-- PWA Apple -->
@@ -27,26 +27,28 @@
 <body>
   <div id="app">
     <!-- 🔥 Pindahkan nav ke sini -->
-    <nav id="navbar" class="nav-buttons"></nav>
+     <header>
+      <h1>WebGIS Story</h1>
+      <nav id="navbar" class="nav-buttons"></nav>
+    </header>
+    
 
     <main id="mainContent"></main>
+    <footer>
+      <p>&copy; 2024 WebGIS Story. All rights reserved.</p>
+    </footer>
   </div>
 
   <script type="module" src="./js/main.js"></script>
 
   <script>
-    // Register Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered:', registration);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      });
-    }
-  </script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.log('SW registration failed:', err));
+    });
+  }
+</script>
 </body>
 </html>

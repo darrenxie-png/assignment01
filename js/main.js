@@ -18,7 +18,7 @@ function updateNavbar() {
   if (token) {
     navbar.innerHTML = `
       <nav class="navbar">
-        <div class="nav-brand">WebGIS Story</div>
+        
         <div class="nav-links">
           <a href="#/" class="nav-btn">🏠 Home</a>
           <a href="#/add" class="nav-btn">➕ Tambah Story</a>

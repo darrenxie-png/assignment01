@@ -400,3 +400,10 @@ textarea {
   height: 400px;
   width: 100%;
 }
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2f3640;
+  color: white;
+  margin-top: 2rem;
+}
