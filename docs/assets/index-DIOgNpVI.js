@@ -7,7 +7,7 @@
         <div id="map" style="height: 400px; width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 8px;"></div>
         <div class="story-controls">
           <button id="showAllBtn" class="active">Semua Story</button>
-          <button id="showBookmarkedBtn">Story Tersimpan</button>
+          
         </div>
         <div id="stories" class="story-list"></div>
       </section>
@@ -80,14 +80,13 @@
         <p>Sudah punya akun? <a href="#/login">Login di sini</a></p>
       </section>
     `},afterRender(){document.getElementById("registerForm").addEventListener("submit",async v=>{v.preventDefault();const h=document.getElementById("name").value.trim(),k=document.getElementById("email").value.trim(),d=document.getElementById("password").value;if(d.length<8){alert("Password harus minimal 8 karakter");return}try{const _=await(await fetch("https://story-api.dicoding.dev/v1/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:h,email:k,password:d})})).json();_.error?alert(`Registrasi gagal: ${_.message}`):(alert("Registrasi berhasil! Silakan login."),window.location.hash="/login")}catch(g){console.error(g),alert("Terjadi kesalahan koneksi.")}})}},ss={"/":Pn,"/add":is,"/login":ns,"/register":os},ve=async()=>{const m=document.getElementById("mainContent"),v=window.location.hash.slice(1).toLowerCase()||"/",h=ss[v]||Pn;if(!localStorage.getItem("token")&&v==="/add"){alert("Silakan login terlebih dahulu untuk menambah story."),window.location.hash="/login";return}document.startViewTransition?document.startViewTransition(async()=>{m.innerHTML=await h.render(),h.afterRender&&await h.afterRender(),window.updateNavbar&&window.updateNavbar()}):(m.innerHTML=await h.render(),h.afterRender&&await h.afterRender(),window.updateNavbar&&window.updateNavbar())};window.addEventListener("hashchange",ve);window.addEventListener("load",ve);function rs(m){const v="=".repeat((4-m.length%4)%4),h=(m+v).replace(/-/g,"+").replace(/_/g,"/"),k=window.atob(h),d=new Uint8Array(k.length);for(let g=0;g<k.length;++g)d[g]=k.charCodeAt(g);return d}const as="BKt_cM0Uoq5ijZexhi46VAL7lRT0AjIXdSXuP_guU1NgfzCtSYUYeECFD-_KxX40TnFLbFRXWPwkF0c0epLFF60";function ye(){const m=document.getElementById("navbar")||document.getElementById("navLinks"),v=localStorage.getItem("token");if(!m){console.warn("⚠️ Elemen navbar tidak ditemukan di halaman.");return}if(v){m.innerHTML=`
-      <nav class="navbar">
-        
-        <div class="nav-links">
-          <a href="#/" class="nav-btn">🏠 Home</a>
-          <a href="#/add" class="nav-btn">➕ Tambah Story</a>
-          <button id="logoutBtn" class="nav-btn logout-btn">🚪 Logout</button>
-        </div>
-      </nav>
+     <nav>
+       <a href="#/" class="nav-btn">🏠 Home</a>
+      <a href="#/add" class="nav-btn">Tambah Story</a>
+      <a href="#/favorite" class="nav-btn">⭐ Favorite</a>
+      <button id="logout">Logout</button>
+    </nav>
+
     `;const h=document.getElementById("logoutBtn");h&&h.addEventListener("click",()=>{localStorage.removeItem("token"),alert("Anda telah berhasil logout."),ye(),window.location.hash="#/login"})}else m.innerHTML=`
       <nav class="navbar">
         <div class="nav-brand">WebGIS Story</div>

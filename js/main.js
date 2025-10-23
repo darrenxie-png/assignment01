@@ -17,14 +17,13 @@ function updateNavbar() {
   // Jika sudah login
   if (token) {
     navbar.innerHTML = `
-      <nav class="navbar">
-        
-        <div class="nav-links">
-          <a href="#/" class="nav-btn">🏠 Home</a>
-          <a href="#/add" class="nav-btn">➕ Tambah Story</a>
-          <button id="logoutBtn" class="nav-btn logout-btn">🚪 Logout</button>
-        </div>
-      </nav>
+     <nav>
+       <a href="#/" class="nav-btn">🏠 Home</a>
+      <a href="#/add" class="nav-btn">Tambah Story</a>
+      <a href="#/favorite" class="nav-btn">⭐ Favorite</a>
+      <button id="logout">Logout</button>
+    </nav>
+
     `;
 
     // Tombol logout

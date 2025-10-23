@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aplikasi WebGIS Story untuk menambah dan melihat cerita di peta">
-  <meta name="theme-color" content="#2f3640">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aplikasi WebGIS Story untuk menambah dan melihat cerita di peta" />
+  <meta name="theme-color" content="#2f3640" />
 
   <!-- PWA Manifest -->
-<link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
 
-
-  <!-- PWA Apple -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="WebGIS Story">
-
-  <!-- Icons -->
- 
-
   <title>WebGIS Story</title>
-  <script type="module" crossorigin src="./assets/index-DV4phm_e.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CdiTpq4E.css">
+  <script type="module" crossorigin src="./assets/index-DIOgNpVI.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DfSsm7Qp.css">
 </head>
-
 <body>
-  <div id="app">
-    <!-- 🔥 Pindahkan nav ke sini -->
-     <header>
-      <h1>WebGIS Story</h1>
-      <nav id="navbar" class="nav-buttons"></nav>
-    </header>
-    
+  <!-- Jangan bungkus pakai div lagi -->
+  <header>
+    <h1>WebGIS Story</h1>
+    <nav id="navbar" class="nav-buttons"></nav>
+  </header>
 
-    <main id="mainContent"></main>
-    <footer>
-      <p>&copy; 2024 WebGIS Story. All rights reserved.</p>
-    </footer>
-  </div>
+  <main id="mainContent"></main>
 
+  <footer>
+    <p>&copy; 2025 WebGIS Story by Darren</p>
+  </footer>
 
- <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(registration => console.log('Service Worker registered:', registration))
-        .catch(error => console.log('Service Worker registration failed:', error));
-    });
-  }
-</script>
+  <!-- Script -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) => console.log("SW registration failed:", err));
+      });
+    }
+  </script>
 </body>
 </html>
