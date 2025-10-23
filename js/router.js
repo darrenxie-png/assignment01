@@ -3,12 +3,14 @@ import Home from './home.js';
 import Add from './add.js';
 import Login from './login.js';
 import Register from './register.js';
+import Favorite from './utils/favourite.js';
 
 const routes = {
   '/': Home,
   '/add': Add,
   '/login': Login,
   '/register': Register,
+  '/favorite': Favorite,
 };
 
 const router = async () => {
