@@ -1,6 +1,27 @@
 const DATABASE_NAME = 'webgis-story-db';
 const DATABASE_VERSION = 1;
 const BOOKMARKS_STORE = 'bookmarks';
+import { openDB } from 'idb';
+
+const dbPromise = openDB('webgis-db', 1, {
+  upgrade(db) {
+    db.createObjectStore('favorite', { keyPath: 'id' });
+  },
+});
+
+export const FavoriteStore = {
+  async getAllStories() {
+    return (await dbPromise).getAll('favorite');
+  },
+  async putStory(story) {
+    return (await dbPromise).put('favorite', story);
+  },
+  async deleteStory(id) {
+    return (await dbPromise).delete('favorite', id);
+  },
+};
+
+
 
 export const initDatabase = () => {
   return new Promise((resolve, reject) => {
