@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',  // Change this from '/final_ass-main/' to './'
+  base: '/assignment01/',
   server: {
     port: 3000,
     hmr: {
