@@ -20,11 +20,8 @@ const Home = {
         <h2 class="page-title">📍 Daftar Story</h2>
         <div id="map" style="height: 400px; width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 8px;"></div>
         <div class="story-controls">
-        
-  <button id="showAllBtn" class="active">Semua Story</button>
-  <button id="showBookmarkedBtn">Story Favorit</button>
-
-
+          <button id="showAllBtn" class="active">Semua Story</button>
+          
         </div>
         <div id="stories" class="story-list"></div>
       </section>
